@@ -1,0 +1,12 @@
+api:
+  build: .
+  volumes:
+    - ".:/car"
+  ports:
+    - "80:9090"
+  links:
+    - mongo
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
